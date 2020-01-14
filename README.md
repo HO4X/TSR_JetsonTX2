@@ -5,13 +5,22 @@ This part splits into two sections:
 - one for the training and engine creation of the CNN-Classifier (MobileNetV1)
 - the other one is the runtime code for the Nvidia Jetson TX2
 
+## Basic Idea behind this 
+![Alt SW Architecture](doc/idea.jpg?raw=true "SW Architecture")
+
+This approach does run really fast on the Jetson as long as the VisionWorks OpenCV is used, as its optimized. 
+Also the runtime depends on the input size of the CNN. 
+
 ## Current ToDo's
 An overview of the current open points. 
 
-!Complete scripts etc.!
+- Add Demo
+- !Complete scripts etc.!
 
 ### CNN Classifier
 - implement EfficientNet (https://arxiv.org/abs/1905.11946)
+- Add background class
+- Add test dataset
 
 ### Jetson Runtime Code 
 - improve ROI-Filtering 
