@@ -1,7 +1,7 @@
-# Implementation TrafficSignRecognition for JetsonTX2
+# TrafficSignRecognition for JetsonTX2
 ### Note: this repo is WIP!
 
-This part splits into two sections: 
+This project splits into two sections: 
 - one for the training and engine creation of the CNN-Classifier (MobileNetV1)
 - the other one is the runtime code for the Nvidia Jetson TX2
 
@@ -10,6 +10,7 @@ This part splits into two sections:
 
 This approach does run really fast on the Jetson as long as the VisionWorks OpenCV is used, as its optimized. 
 Also the runtime depends on the input size of the CNN. 
+The current CNN model is an mobilenet, which is able to recognize 43 classes of german traffic signs. 
 
 ## Current ToDo's
 An overview of the current open points. 
