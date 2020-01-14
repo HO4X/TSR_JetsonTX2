@@ -126,7 +126,7 @@ int main(int argc, char ** argv) {
             std::cout << "Use webcam" << std::endl;
             inputVideo = new VideoCapture(1);
         }*/
-        VideoCapture* inputVideo = new VideoCapture(1);
+        VideoCapture* inputVideo = new VideoCapture(1); //USB - Webcam
 
         Mat currentFrame, currentFrameColor, currentFrameOrginal, cannyFrame, contourFrame,blurFrame, correctedFrame, drawing = Mat::zeros( cannyFrame.size(), CV_8UC3 );
 
@@ -143,12 +143,6 @@ int main(int argc, char ** argv) {
         string TrackbarName2;
         
         float fps, fps_avg = 0; 
-
-        /// Create Windows
-        //namedWindow("Treshold 1", 1);
-        //namedWindow("Treshold 2", 1);
-        //createTrackbar( TrackbarName1, "Treshold 1", &trshold1, 1024 );
-        //createTrackbar( TrackbarName2, "Treshold 2", &trshold2, 1024 );
 
         auto current_ticks = std::chrono::high_resolution_clock::now();
         auto  cvtColor_start = current_ticks;
@@ -188,7 +182,6 @@ int main(int argc, char ** argv) {
                 blur_end = std::chrono::high_resolution_clock::now();
 
                 // Calculate Tresholds https://stackoverflow.com/questions/18194870/canny-edge-image-noise-removal
-                //drawHistogram(correctedFrame);
                 Mat temp;
                 double otsu_thresh_val = cv::threshold( blurFrame, temp, 0, 255, CV_THRESH_OTSU );
                 double high_thresh_val  = otsu_thresh_val,
